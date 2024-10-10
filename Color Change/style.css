@@ -1,0 +1,42 @@
+* {
+    background-color: black;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    height: 50px;
+    justify-content: center;
+}
+
+a {
+    position: relative;
+    cursor: pointer;
+    color: blanchedalmond; /* Cor inicial do texto */
+    font-size: 28px;
+    padding: 0.5rem 1rem;
+    transition: color 0.25s ease; /* Transição suave na cor do texto */
+    z-index: 1; /* Garante que o texto esteja acima do fundo */
+}
+
+a::after {
+    position: absolute;
+    content: "";
+    inset: 0;
+    background: blanchedalmond; /* Cor inicial do fundo */
+    transform: scaleY(0); /* Inicialmente sem altura */
+    z-index: -1; /* Pseudo-elemento abaixo do texto */
+    transition: transform 0.5s ease; /* Transição suave na expansão */
+    border-radius: 10px;
+    transform-origin: center; /* A transição começa do centro */
+}
+
+a:hover {
+    color: black; /* Muda a cor do texto para preto no hover */
+}
+
+a:hover::after {
+    transform: scaleY(1); /* Expande o fundo verticalmente no hover */
+}

@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+}
+
+nav {
+    position: relative;
+    width: 475px;
+    height: 50px;
+    background: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+nav a {
+    position: relative;
+    display: flex; /* Mantenha o display como flex para centralizar o texto */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    padding: 0 23px;
+    z-index: 1;
+    width: 95px; /* Define uma largura fixa para cada link */
+    height: 100%; /* Faz o link ocupar toda a altura do nav */
+}
+
+nav span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95px;
+    height: 100%;
+    background: linear-gradient(45deg, #194b4f, #33fffc);
+    transition: left 0.5s ease;
+    border-radius: 10px;
+    z-index: 0;
+    opacity: 0;
+}
+
+nav a:nth-child(1):hover ~ span {
+    left: 0;
+    opacity: 1;
+}
+
+nav a:nth-child(2):hover ~ span {
+    left: 95px;
+    opacity: 1;
+}
+
+nav a:nth-child(3):hover ~ span {
+    left: 190px;
+    opacity: 1;
+}
+
+nav a:nth-child(4):hover ~ span {
+    left: 285px;
+    opacity: 1;
+}
+
+nav a:nth-child(5):hover ~ span {
+    left: 380px;
+    opacity: 1;
+}
